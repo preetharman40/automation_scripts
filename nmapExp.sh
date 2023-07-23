@@ -2,7 +2,8 @@
 
 #/home/kali/hackthebox/stocker/nmap
 
-file="/home/kali/hackthebox/stocker/nmap"
+
+file="$1"
 
 
 Address=None
@@ -36,7 +37,6 @@ echo "========================= Nmap Report for $Address =======================
 # Extract whether Host is up or down
 
 Status=$(awk '/^Host is up/ { print $3 }' $file)
-echo $Status
 
 
 if [[ $Status == "up" ]]
